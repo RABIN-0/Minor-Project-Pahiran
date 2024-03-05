@@ -1,8 +1,8 @@
 #for GUI
-from PyQt5 import QtCore, QtGui, QtWidgets,QIcon
+from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QFileInfo                                  
 from PyQt5.QtWidgets import QFileDialog,QLabel
-from PyQt5.QtGui import QIcon
+# from PyQt5.QtGui import QIcon
 from PyQt5.QtGui import *
 #from PyQt5.QtGui import QLabel
 import random
@@ -268,7 +268,7 @@ class Ui_MainWindow(object):
     #################
     def Generate(self):
         toseason = 'spring'  # Define the season here
-        for i in range(3):  # Loop three times to generate three recommendations
+        for i in range(2):  # Loop three times to generate three recommendations
             top_right_season = [i for i in self.top if i[3] == toseason ]
             if top_right_season != []:
                 ad_top = top_right_season[np.random.randint(len(top_right_season))]
@@ -303,10 +303,10 @@ class Ui_MainWindow(object):
                 self.listWidget_4.setPixmap(QtGui.QPixmap(ad_top[-1]).scaled(341,300))
                 self.listWidget_5.setPixmap(QtGui.QPixmap(ad_bot[-1]).scaled(341,300))
                 self.listWidget_6.setPixmap(QtGui.QPixmap(ad_sho[-1]).scaled(341,300))
-            elif i == 2:
-                self.listWidget_7.setPixmap(QtGui.QPixmap(ad_top[-1]).scaled(341,300))
-                self.listWidget_8.setPixmap(QtGui.QPixmap(ad_bot[-1]).scaled(341,300))
-                self.listWidget_9.setPixmap(QtGui.QPixmap(ad_sho[-1]).scaled(341,300))
+            # elif i == 2:
+            #     self.listWidget_7.setPixmap(QtGui.QPixmap(ad_top[-1]).scaled(341,300))
+            #     self.listWidget_8.setPixmap(QtGui.QPixmap(ad_bot[-1]).scaled(341,300))
+            #     self.listWidget_9.setPixmap(QtGui.QPixmap(ad_sho[-1]).scaled(341,300))
     #####################################################################################
 
     # The below are the appearance settings of the GUI
@@ -401,20 +401,20 @@ class Ui_MainWindow(object):
         self.listWidget_6.setObjectName("listWidget_6")
         self.listWidget_6.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
         
-        self.listWidget_7 = QtWidgets.QLabel(self.centralwidget)
-        self.listWidget_7.setGeometry(QtCore.QRect(150, 1050, 341, 300))
-        self.listWidget_7.setObjectName("listWidget_7")
-        self.listWidget_7.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
+        # self.listWidget_7 = QtWidgets.QLabel(self.centralwidget)
+        # self.listWidget_7.setGeometry(QtCore.QRect(150, 1050, 341, 300))
+        # self.listWidget_7.setObjectName("listWidget_7")
+        # self.listWidget_7.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
         
-        self.listWidget_8 = QtWidgets.QLabel(self.centralwidget)
-        self.listWidget_8.setGeometry(QtCore.QRect(550, 1050, 341, 300))
-        self.listWidget_8.setObjectName("listWidget_8")
-        self.listWidget_8.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
+        # self.listWidget_8 = QtWidgets.QLabel(self.centralwidget)
+        # self.listWidget_8.setGeometry(QtCore.QRect(550, 1050, 341, 300))
+        # self.listWidget_8.setObjectName("listWidget_8")
+        # self.listWidget_8.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
         
-        self.listWidget_9 = QtWidgets.QLabel(self.centralwidget)
-        self.listWidget_9.setGeometry(QtCore.QRect(950, 1050, 341, 300))
-        self.listWidget_9.setObjectName("listWidget_9")
-        self.listWidget_9.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
+        # self.listWidget_9 = QtWidgets.QLabel(self.centralwidget)
+        # self.listWidget_9.setGeometry(QtCore.QRect(950, 1050, 341, 300))
+        # self.listWidget_9.setObjectName("listWidget_9")
+        # self.listWidget_9.setPixmap(QtGui.QPixmap("/Users/pingkefan/Desktop/top_question.png").scaled(281,300))
         
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -528,8 +528,8 @@ def run_ui():
     ui.listWidget_4.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
     ui.listWidget_5.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
     ui.listWidget_6.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
-    ui.listWidget_7.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
-    ui.listWidget_8.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
-    ui.listWidget_9.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
+    # ui.listWidget_7.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
+    # ui.listWidget_8.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
+    # ui.listWidget_9.setStyleSheet("background-color: rgba(255, 255, 255, 50);")
     MainWindow.show()
     sys.exit(app.exec_())
